@@ -8,8 +8,8 @@ LABEL_FONT = ('Helvetica', 20)
 LABEL_WIDTH = 2
 
 # Color schemes
-LIGHT_MODE = {'bg': '#EEE', 'fg': '#111'}
-DARK_MODE = {'bg': '#111', 'fg': '#EEE'}
+LIGHT_MODE = {'bg': '#EEE', 'fg': '#222'}
+DARK_MODE = {'bg': '#222', 'fg': '#EEE'}
 
 # Initial mode
 current_mode = DARK_MODE
@@ -52,6 +52,7 @@ def toggle_mode():
 root = tk.Tk()
 root.title("Binary Clock")
 root.config(bg=current_mode['bg'])
+root.resizable(False, False)
 
 # Create and place binary labels
 labels = [tk.Label(root, font=LABEL_FONT, width=LABEL_WIDTH, bg=current_mode['bg'], fg=current_mode['fg']) for _ in range(BITS_PER_DIGIT * DIGITS)]
