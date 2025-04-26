@@ -33,7 +33,7 @@ def update_clock():
     hour_label.config(text=current_time[:2])
     minute_label.config(text=current_time[2:4])
     second_label.config(text=current_time[4:6])
-    root.after(1000, update_clock)
+    root.after(100, update_clock)
 
 def toggle_mode():
     """
