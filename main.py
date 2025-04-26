@@ -2,7 +2,7 @@ import tkinter as tk
 import time
 
 # Constants
-BITS_PER_DIGIT = 4
+BITS_PER_DIGIT = 3
 DIGITS = 6
 LABEL_FONT = ('Helvetica', 20)
 LABEL_WIDTH = 2
@@ -20,7 +20,7 @@ def time_to_binary(current_time):
     :param current_time: str
     :return: str
     """
-    return ''.join(format(int(digit), '04b') for digit in current_time)
+    return ''.join(format(int(current_time[i:i+2]), '06b') for i in range(0, len(current_time), 2))
 
 def update_clock():
     """
